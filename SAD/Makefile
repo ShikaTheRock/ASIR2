@@ -45,7 +45,7 @@ nuevo:
 	@echo 'subject: "$(SUBJECT)"' >> "$(NOMBRE)/$(NOMBRE).md"
 	@echo 'titlepage: true' >> "$(NOMBRE)/$(NOMBRE).md"
 	@echo 'titlepage-rule-height: 0' >> "$(NOMBRE)/$(NOMBRE).md"
-	@echo 'titlepage-background: ../$(PORTADA)' >> "$(NOMBRE)/$(NOMBRE).md"
+	@echo 'titlepage-background: $(PORTADA)' >> "$(NOMBRE)/$(NOMBRE).md"
 	@echo 'toc-own-page: true' >> "$(NOMBRE)/$(NOMBRE).md"
 	@echo 'titlepage-text-color: ffffff' >> "$(NOMBRE)/$(NOMBRE).md"
 
