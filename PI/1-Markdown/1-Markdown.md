@@ -6,6 +6,7 @@ subject: "PI"
 titlepage: true
 titlepage-rule-height: 0
 titlepage-background: "/home/shika/ASIR2/PI/0-Template/portada.jpg"
+page-background: "/home/shika/ASIR2/IAW/0-Template/portada.jpg"
 toc-own-page: true
 titlepage-text-color: ffffff
 ---
