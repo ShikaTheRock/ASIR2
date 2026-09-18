@@ -27,14 +27,17 @@ groups | grep -q "ALU_FP_A3"
 
 if [ $? -eq 0 ]; then 
     echo "You are a Alumno User" 
+    prof=2
 fi 
 
 groups | grep -q "Docente_A3" 
 
 if [ $? -eq 0 ]; then 
     echo "You are a Docente User"
+    prof=1
 else
     echo "You are a Default User"
+    prof=0
 fi
 #Vbox test 
 groups | grep -q "vboxusers" 
@@ -100,4 +103,17 @@ if ss -lnt | grep -q ':3306 '; then
     echo "MariaDB/MySQL esta escuchando en el puerto 3306"
 else
     echo "Seems that MariaDB is not installed/active"
+fi
+
+if [ $prof -eq 1 ] && [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+
+    # Activar modo presentación
+    echo "Activando modo presentación..."
+    qdbus6 | grep -i power
+
+    # Preguntar si desea pasar lista
+    if kdialog --yesno "¿Desea pasar lista?"; then
+        echo "Pasando lista..."
+    fi
+
 fi
