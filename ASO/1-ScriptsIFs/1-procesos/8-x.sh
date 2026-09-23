@@ -1,5 +1,6 @@
-#!/bin/bash 
-if [ $prof -eq 1 ] && [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
+#!/bin/bash -x
+
+if [ $USUARIO_TIPO -eq 1 ] && [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
 
     # Activar modo presentación
     echo "Activando modo presentación..."
@@ -11,3 +12,4 @@ if [ $prof -eq 1 ] && [ "$XDG_CURRENT_DESKTOP" = "KDE" ]; then
     fi
 
 fi
+
