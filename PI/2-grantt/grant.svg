@@ -1,0 +1,183 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680" width="100%" height="100%" style="font-family: system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  
+  <!-- FONDO OSCURO SÓLIDO PARA TODO EL LIENZO -->
+  <!-- Esto garantiza que nunca sea transparente y se vea perfecto en webs o documentos con fondo blanco -->
+  <rect width="100%" height="100%" fill="#0d1117" />
+
+  <defs>
+    <!-- Filtro de sombra para las barras -->
+    <filter id="shadow-dark" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.6" />
+    </filter>
+
+    <!-- Gradientes vibrantes optimizados para fondo oscuro -->
+    <linearGradient id="grad-ra1-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff6b6b" />
+      <stop offset="100%" stop-color="#ee5253" />
+    </linearGradient>
+    <linearGradient id="grad-ra2-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9f43" />
+      <stop offset="100%" stop-color="#ee5253" />
+    </linearGradient>
+    <linearGradient id="grad-ra3-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#feca57" />
+      <stop offset="100%" stop-color="#ff9f43" />
+    </linearGradient>
+    <linearGradient id="grad-ra4-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#1dd1a1" />
+      <stop offset="100%" stop-color="#10ac84" />
+    </linearGradient>
+    <linearGradient id="grad-ra5-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#48dbfb" />
+      <stop offset="100%" stop-color="#0abde3" />
+    </linearGradient>
+    <linearGradient id="grad-ra6-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#54a0ff" />
+      <stop offset="100%" stop-color="#2e86de" />
+    </linearGradient>
+    <linearGradient id="grad-ra7-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#9c88ff" />
+      <stop offset="100%" stop-color="#8c7ae6" />
+    </linearGradient>
+    <linearGradient id="grad-ra8-dark" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ff9ff3" />
+      <stop offset="100%" stop-color="#f368e0" />
+    </linearGradient>
+
+    <!-- Estilo de las flechas de dependencia -->
+    <marker id="arrow-dark" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 1 L 8 5 L 0 9 z" fill="#8b949e" />
+    </marker>
+  </defs>
+
+  <!-- Título del Diagrama -->
+  <text x="500" y="45" text-anchor="middle" fill="#f0f6fc" font-size="22" font-weight="bold">Diagrama de Gantt y Dependencias — Gestión de Bases de Datos (1.º FP)</text>
+  <text x="500" y="70" text-anchor="middle" fill="#8b949e" font-size="13">Planificación por Resultados de Aprendizaje (RA) — 38 Semanas Lectivas</text>
+
+  <!-- Fondo secundario del área del Gantt -->
+  <rect x="280" y="100" width="680" height="520" rx="8" fill="#161b22" stroke="#30363d" stroke-width="1" />
+
+  <!-- Guías de Semanas -->
+  <g stroke="#21262d" stroke-width="1" stroke-dasharray="4,4">
+    <line x1="360" y1="100" x2="360" y2="620" />
+    <line x1="429" y1="100" x2="429" y2="620" />
+    <line x1="499" y1="100" x2="499" y2="620" />
+    <line x1="568" y1="100" x2="568" y2="620" />
+    <line x1="638" y1="100" x2="638" y2="620" />
+    <line x1="708" y1="100" x2="708" y2="620" />
+    <line x1="777" y1="100" x2="777" y2="620" />
+    <line x1="847" y1="100" x2="847" y2="620" />
+    <line x1="916" y1="100" x2="916" y2="620" />
+  </g>
+
+  <!-- Cabecera de la escala temporal -->
+  <g fill="#8b949e" font-size="11" font-weight="600" text-anchor="middle">
+    <text x="307" y="120">Sem 1</text>
+    <text x="360" y="120">Sem 5</text>
+    <text x="429" y="120">Sem 9</text>
+    <text x="499" y="120">Sem 13</text>
+    <text x="568" y="120">Sem 17</text>
+    <text x="638" y="120">Sem 21</text>
+    <text x="708" y="120">Sem 25</text>
+    <text x="777" y="120">Sem 29</text>
+    <text x="847" y="120">Sem 33</text>
+    <text x="916" y="120">Sem 37</text>
+  </g>
+
+  <line x1="280" y1="130" x2="960" y2="130" stroke="#30363d" stroke-width="1.5" />
+
+  <!-- Filas del Diagrama de Gantt -->
+  <!-- RA1 -->
+  <g transform="translate(0, 140)">
+    <text x="260" y="30" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="end">RA1: Alm. de la Información</text>
+    <text x="260" y="44" fill="#8b949e" font-size="10" text-anchor="end">Fundamentos y SGBD</text>
+    <rect x="290" y="15" width="70" height="32" rx="6" fill="url(#grad-ra1-dark)" filter="url(#shadow-dark)" />
+    <text x="325" y="35" fill="#0d1117" font-size="11" font-weight="bold" text-anchor="middle">4 sem</text>
+  </g>
+
+  <!-- RA2 -->
+  <g transform="translate(0, 200)">
+    <text x="260" y="30" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="end">RA2: Diseño Lógico</text>
+    <text x="260" y="44" fill="#8b949e" font-size="10" text-anchor="end">Modelo E-R y Normalización</text>
+    <rect x="360" y="15" width="122" height="32" rx="6" fill="url(#grad-ra2-dark)" filter="url(#shadow-dark)" />
+    <text x="421" y="35" fill="#0d1117" font-size="11" font-weight="bold" text-anchor="middle">7 sem</text>
+  </g>
+
+  <!-- RA3 -->
+  <g transform="translate(0, 260)">
+    <text x="260" y="30" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="end">RA3: Diseño Físico / DDL</text>
+    <text x="260" y="44" fill="#8b949e" font-size="10" text-anchor="end">Estructuras y Tablas SQL</text>
+    <rect x="482" y="15" width="122" height="32" rx="6" fill="url(#grad-ra3-dark)" filter="url(#shadow-dark)" />
+    <text x="543" y="35" fill="#0d1117" font-size="11" font-weight="bold" text-anchor="middle">7 sem</text>
+  </g>
+
+  <!-- RA4 -->
+  <g transform="translate(0, 320)">
+    <text x="260" y="30" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="end">RA4: Consultas DML</text>
+    <text x="260" y="44" fill="#8b949e" font-size="10" text-anchor="end">SELECT, JOINs, Agregación</text>
+    <rect x="604" y="15" width="104" height="32" rx="6" fill="url(#grad-ra4-dark)" filter="url(#shadow-dark)" />
+    <text x="656" y="35" fill="#0d1117" font-size="11" font-weight="bold" text-anchor="middle">6 sem</text>
+  </g>
+
+  <!-- RA5 -->
+  <g transform="translate(0, 380)">
+    <text x="260" y="30" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="end">RA5: Modificación DML</text>
+    <text x="260" y="44" fill="#8b949e" font-size="10" text-anchor="end">INSERT, UPDATE, DELETE</text>
+    <rect x="708" y="15" width="52" height="32" rx="6" fill="url(#grad-ra5-dark)" filter="url(#shadow-dark)" />
+    <text x="734" y="35" fill="#0d1117" font-size="11" font-weight="bold" text-anchor="middle">3 sem</text>
+  </g>
+
+  <!-- RA6 -->
+  <g transform="translate(0, 440)">
+    <text x="260" y="30" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="end">RA6: Programación BD</text>
+    <text x="260" y="44" fill="#8b949e" font-size="10" text-anchor="end">PL/SQL, Procedimientos, Triggers</text>
+    <rect x="760" y="15" width="104" height="32" rx="6" fill="url(#grad-ra6-dark)" filter="url(#shadow-dark)" />
+    <text x="812" y="35" fill="#0d1117" font-size="11" font-weight="bold" text-anchor="middle">6 sem</text>
+  </g>
+
+  <!-- RA7 -->
+  <g transform="translate(0, 500)">
+    <text x="260" y="30" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="end">RA7: Seguridad y Optimización</text>
+    <text x="260" y="44" fill="#8b949e" font-size="10" text-anchor="end">Permisos (DCL), Backups, Tuning</text>
+    <rect x="864" y="15" width="52" height="32" rx="6" fill="url(#grad-ra7-dark)" filter="url(#shadow-dark)" />
+    <text x="890" y="35" fill="#0d1117" font-size="11" font-weight="bold" text-anchor="middle">3 sem</text>
+  </g>
+
+  <!-- RA8 -->
+  <g transform="translate(0, 560)">
+    <text x="260" y="30" fill="#f0f6fc" font-size="13" font-weight="bold" text-anchor="end">RA8: NoSQL y Tecnol. Emergentes</text>
+    <text x="260" y="44" fill="#8b949e" font-size="10" text-anchor="end">Bases Orientadas a Objetos / Doc</text>
+    <rect x="916" y="15" width="35" height="32" rx="6" fill="url(#grad-ra8-dark)" filter="url(#shadow-dark)" />
+    <text x="933" y="35" fill="#0d1117" font-size="10" font-weight="bold" text-anchor="middle">2s</text>
+  </g>
+
+  <!-- Flechas de Dependencia -->
+  <g stroke="#8b949e" stroke-width="2" fill="none">
+    <!-- RA1 -> RA2 -->
+    <path d="M 360 171 L 360 213" marker-end="url(#arrow-dark)" />
+    
+    <!-- RA2 -> RA3 -->
+    <path d="M 482 231 L 482 273" marker-end="url(#arrow-dark)" />
+    
+    <!-- RA3 -> RA4 -->
+    <path d="M 604 291 L 604 333" marker-end="url(#arrow-dark)" />
+    
+    <!-- RA4 -> RA5 -->
+    <path d="M 708 351 L 708 393" marker-end="url(#arrow-dark)" />
+    
+    <!-- RA5 -> RA6 -->
+    <path d="M 760 411 L 760 453" marker-end="url(#arrow-dark)" />
+    
+    <!-- RA6 -> RA7 -->
+    <path d="M 864 471 L 864 513" marker-end="url(#arrow-dark)" />
+    
+    <!-- RA7 -> RA8 -->
+    <path d="M 916 531 L 916 573" marker-end="url(#arrow-dark)" />
+  </g>
+
+  <!-- Leyenda -->
+  <g transform="translate(40, 645)">
+    <circle cx="10" cy="10" r="5" fill="#8b949e" />
+    <text x="22" y="14" fill="#8b949e" font-size="11">Las flechas verticales indican encadenamiento secuencial obligatorio de conocimientos (Prerrequisitos directos).</text>
+  </g>
+</svg>
