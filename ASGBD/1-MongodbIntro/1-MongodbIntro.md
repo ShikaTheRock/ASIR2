@@ -9,3 +9,7 @@ titlepage-background: 0-Template/portada.jpg
 toc-own-page: true
 titlepage-text-color: ffffff
 ---
+
+# Instalacion mongodb
+
+![alt text](1-MongodbIntro/image.png)
