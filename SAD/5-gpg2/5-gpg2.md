@@ -15,5 +15,6 @@ titlepage-text-color: ffffff
 
 Generamos las claves y les ponemos una contraseña ultrasegura [12345678]
 
-![alt text](image-1.png)
+
+
 
