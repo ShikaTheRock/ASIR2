@@ -1,0 +1,201 @@
+CHULETA PYTHON – UD1
+Ejercicios resueltos + conceptos básicos
+
+1) AUTENTICACIÓN CON 3 INTENTOS
+SISTEMA = ("admin", "sysadmin123", "Administrador Principal")
+intentos = 0
+
+while intentos < 3:
+    usuario = input("Usuario: ")
+    clave = input("Contraseña: ")
+
+    if usuario == SISTEMA[0] and clave == SISTEMA[1]:
+        print("Bienvenido,", SISTEMA[2])
+        break
+    else:
+        intentos += 1
+        print("Credenciales incorrectas. Intentos restantes:", 3 - intentos)
+
+if intentos == 3:
+    print("Acceso bloqueado")
+
+2) AUDITORÍA DE SERVIDORES
+n = int(input("¿Cuántos servidores vas a auditar?: "))
+estados = []
+
+for i in range(n):
+    estado = input(f"Estado del servidor {i+1} (OK/WARN/ERROR): ").upper()
+    estados.append(estado)
+
+ok = estados.count("OK")
+errores = estados.count("ERROR")
+if n > 0:
+    disponibilidad = ok / n * 100
+else:
+    disponibilidad = 0
+
+print("Total auditados:", len(estados))
+print("Servidores OK:", ok)
+print("Servidores con ERROR:", errores)
+print("Porcentaje de disponibilidad:", disponibilidad, "%")
+
+3) CONSUMO DE RAM POR NODO
+ram = {"Nodo-01": 8.5, "Nodo-02": 14.0, "Nodo-03": 6.2, "Nodo-04": 11.8}
+
+for nodo, consumo in ram.items():
+    print(nodo, ":", consumo, "GB")
+
+valores = list(ram.values())
+print("Consumo medio:", sum(valores) / len(valores), "GB")
+print("Pico máximo:", max(valores), "GB")
+print("Consumo mínimo:", min(valores), "GB")
+
+4) PUERTOS ÚNICOS
+puertos = [80, 443, 22, 80, 8080, 22, 443, 3306]
+unicos = set(puertos)
+
+print("Lista original:", puertos)
+print("Puertos únicos:", unicos)
+print("Total de puertos distintos:", len(unicos))
+
+if 443 in unicos:
+    print("El puerto 443 (HTTPS) está abierto")
+else:
+    print("El puerto 443 no está abierto")
+
+5) COMPRA DE LICENCIAS
+catalogo = {
+    "windows": 120,
+    "linux_support": 80,
+    "antivirus": 35,
+    "backup_pro": 150
+}
+total = 0
+
+while True:
+    licencia = input("Licencia (o 'salir' para terminar): ").lower()
+
+    if licencia == "salir":
+        break
+    elif licencia in catalogo:
+        total += catalogo[licencia]
+        print("Añadido:", licencia, "| Total acumulado:", total, "€")
+    else:
+        print("Licencia no encontrada")
+
+print("Total a pagar:", total, "€")
+
+6) INVENTARIO DE DIRECCIONES IP
+inventario = {}
+
+while True:
+    print("1. Registrar equipo | 2. Buscar IP | 3. Listar inventario | 4. Salir")
+    opcion = input("Opción: ")
+
+    if opcion == "1":
+        host = input("Nombre del host: ")
+        ip = input("Dirección IP: ")
+        inventario[host] = ip
+        print("Equipo registrado")
+    elif opcion == "2":
+        host = input("Host a buscar: ")
+        if host in inventario:
+            print("IP de", host, ":", inventario[host])
+        else:
+            print("Host no encontrado")
+    elif opcion == "3":
+        for host, ip in inventario.items():
+            print(host, ":", ip)
+    elif opcion == "4":
+        print("Cerrando aplicación")
+        break
+    else:
+        print("Opción no válida")
+
+7) DOMINIOS DE CORREO ÚNICOS
+correos = [
+    "maria@gmail.com", "pedro@outlook.com", "juan@gmail.com",
+    "ana@empresa.es", "luis@outlook.com"
+]
+dominios = set()
+
+for correo in correos:
+    dominio = correo.split("@")[1]
+    dominios.add(dominio)
+
+print("Total de dominios diferentes:", len(dominios))
+for dominio in dominios:
+    print("-", dominio)
+
+--------------------------------------------------
+CONCEPTOS IMPRESCINDIBLES
+
+VARIABLES Y TIPOS
+- variable = guarda un dato: nombre = "Ana"
+- int(input(...)): pide un texto y lo convierte a entero.
+- str: texto; int: entero; float: decimal; bool: verdadero/falso.
+
+CONDICIONALES
+if condicion:
+    ...
+elif otra_condicion:
+    ...
+else:
+    ...
+- == compara igualdad; = asigna un valor.
+- and exige que ambas condiciones sean verdaderas.
+- in comprueba si algo está dentro de una lista, set o claves de diccionario.
+- break termina el bucle.
+
+BUCLES
+- for elemento in lista: recorre cada elemento.
+- for i in range(n): repite n veces (i va de 0 a n-1).
+- while condicion: repite mientras la condición sea verdadera.
+- while True: bucle indefinido; se suele salir con break.
+
+LISTAS []
+- Ordenadas, permiten repetidos y se pueden modificar.
+- lista.append(x): añade x al final.
+- lista.count(x): cuenta cuántas veces aparece x.
+- len(lista): cantidad de elementos.
+- lista[i]: elemento en posición i; empieza en 0.
+
+TUPLAS ()
+- Como las listas, pero no se pueden modificar.
+- tupla[0] accede al primer elemento.
+
+SETS / CONJUNTOS set()
+- No guardan duplicados; el orden no está garantizado.
+- set(lista): elimina repetidos.
+- conjunto.add(x): añade un elemento.
+- x in conjunto: comprueba pertenencia.
+- len(conjunto): número de elementos distintos.
+
+DICCIONARIOS {clave: valor}
+- Guardan parejas clave-valor.
+- diccionario[clave] obtiene el valor.
+- diccionario[clave] = valor crea o actualiza.
+- clave in diccionario comprueba si existe la clave.
+- diccionario.items(): recorre claves y valores.
+- diccionario.keys(): claves; diccionario.values(): valores.
+
+FUNCIONES ÚTILES
+- len(x): cantidad de elementos.
+- sum(lista): suma números.
+- max(lista) / min(lista): máximo / mínimo.
+- list(x): convierte a lista.
+- set(x): convierte a conjunto y quita duplicados.
+- input(mensaje): pide un dato (devuelve texto).
+- print(...): muestra información.
+- texto.split("@"): separa el texto por @; [1] obtiene la parte posterior.
+- texto.upper() / texto.lower(): pasa a mayúsculas / minúsculas.
+- append(x): añade a lista; count(x): cuenta coincidencias.
+- diccionario.items(): permite usar for clave, valor in diccionario.items().
+
+FÓRMULAS Y PISTAS
+- Porcentaje = parte / total * 100.
+- Media = sum(valores) / len(valores).
+- Acumulador: total = total + precio (atajo: total += precio).
+- Menú: while True + if/elif + break al elegir salir.
+- Validar clave: if clave in diccionario.
+- Si puede haber cero elementos, comprueba len(...) > 0 antes de dividir.
